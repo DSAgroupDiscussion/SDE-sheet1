@@ -1,0 +1,25 @@
+// Find the first non-repeating element in the array
+
+int firstNonRepeating(int arr[], int n)
+{
+    map<int, int> m;
+    
+    // Store the frequency of each element in the array
+    for (int i = 0; i < n; i++)
+    {
+        m[arr[i]]++;
+    }
+    
+    // The very first element whose frequency is found to be equal to 1, it is stored in ans, and then we come out of the loop.
+    int ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (m[arr[i]] == 1)
+        {
+            ans = arr[i];
+            break;
+        }
+
+    }
+    return ans;
+}
